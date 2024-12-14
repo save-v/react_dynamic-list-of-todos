@@ -21,8 +21,8 @@ export const TodoModal: React.FC<{
   }
 
   useEffect(() => {
-    getUser(userId).then(respons => {
-      setUser(respons);
+    getUser(userId).then(response => {
+      setUser(response);
       setIsLoading(false);
     });
   }, [userId]);

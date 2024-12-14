@@ -10,20 +10,20 @@ import { Loader } from './components/Loader';
 
 import { Todo } from './types/Todo';
 import { getTodos } from './api';
-import { СompletedStatus } from './types/СompletedStatus';
+import { CompletedStatus } from './types/CompletedStatus';
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
   const [selectedTodoId, setSelectedTodoId] = useState<number | null>(null);
-  const [filterStatus, setFilterStatus] = useState<СompletedStatus>(
-    СompletedStatus.all,
+  const [filterStatus, setFilterStatus] = useState<CompletedStatus>(
+    CompletedStatus.all,
   );
 
   let flag = null;
 
-  if (filterStatus !== СompletedStatus.all) {
-    flag = filterStatus === СompletedStatus.completed ? true : false;
+  if (filterStatus !== CompletedStatus.all) {
+    flag = filterStatus === CompletedStatus.completed ? true : false;
   }
 
   const filteredTodos = todos.filter(todo => {

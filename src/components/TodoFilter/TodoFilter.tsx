@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { SetStateСompletedStatus } from '../../types/SetStateСompletedStatus';
-import { СompletedStatus } from '../../types/СompletedStatus';
+import { SetStateCompletedStatus } from '../../types/SetStateCompletedStatus';
+import { CompletedStatus } from '../../types/CompletedStatus';
 
 export const TodoFilter: React.FC<{
   query: string;
   setQuery: Dispatch<SetStateAction<string>>;
-  setFilterStatus: SetStateСompletedStatus;
+  setFilterStatus: SetStateCompletedStatus;
 }> = ({ query, setQuery, setFilterStatus }) => {
   function handleSearchChange(value: string) {
     setQuery(value);
@@ -18,13 +18,13 @@ export const TodoFilter: React.FC<{
         <span className="select">
           <select
             onChange={event =>
-              setFilterStatus(event.target.value as СompletedStatus)
+              setFilterStatus(event.target.value as CompletedStatus)
             }
             data-cy="statusSelect"
           >
-            <option value={СompletedStatus.all}>All</option>
-            <option value={СompletedStatus.active}>Active</option>
-            <option value={СompletedStatus.completed}>Completed</option>
+            <option value={CompletedStatus.all}>All</option>
+            <option value={CompletedStatus.active}>Active</option>
+            <option value={CompletedStatus.completed}>Completed</option>
           </select>
         </span>
       </p>

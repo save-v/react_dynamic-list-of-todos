@@ -1,4 +1,4 @@
-export enum СompletedStatus {
+export enum CompletedStatus {
   all = 'all',
   completed = 'completed',
   active = 'active',
